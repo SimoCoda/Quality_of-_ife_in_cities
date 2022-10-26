@@ -122,8 +122,8 @@ p{
         margin: -5px auto;
     }
     #btnGet{
-        font-size: 12px;
-        top: 4px;
+        font-size: 19px;
+        top: 2px;
         border: 1px solid black;
     }
     fieldset{
@@ -140,7 +140,7 @@ p{
         height: 20px;
     }
     #search{
-        height: 18px;
+        height: 15px;
         padding: 0px;
     }
     #information{
