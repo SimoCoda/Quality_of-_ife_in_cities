@@ -58,23 +58,3 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 });
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDlhBVY9o8c3UR-tIS11yydWoUEmYO2Kcc",
-  authDomain: "quality-of-life-in-citie-a7977.firebaseapp.com",
-  projectId: "quality-of-life-in-citie-a7977",
-  storageBucket: "quality-of-life-in-citie-a7977.appspot.com",
-  messagingSenderId: "226311328673",
-  appId: "1:226311328673:web:42935858cf3177ad1fb1e0"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-
