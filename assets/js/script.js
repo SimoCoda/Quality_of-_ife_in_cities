@@ -14,44 +14,36 @@ document.addEventListener('DOMContentLoaded', function(){
         fetch(finalURL)
         .then((response) => response.json())
         .then((data) => {
-            const createCustomList = (type,text,color) => {
+            const createCustomList = (type,color,html,id) => {
                 let e = document.createElement(type);
-                e.textContent = text;
                 e.style.color = color;
+                e.innerHTML = html;
+                e.setAttribute('id', id);
                 information.appendChild(e);
             }
-            const createCustomSummary = (type,text) =>{
-                let s = document.createElement(type);
-                s.innerHTML = text;
-                information.appendChild(s);
-            }
-            createCustomSummary('h2', cityName.toUpperCase()+":");
+            createCustomList('h2',null,cityName.toUpperCase()+":",null);
             for(let i = 0; i<=data.categories.length-1; i++){
-                createCustomList('h3',data.categories[i].name,data.categories[i].color);
-                createCustomList('h4',"Score out of 10" + data.categories[i].score_out_of_10.toFixed(3),data.categories[i].color);
+                createCustomList('h3',data.categories[i].color, data.categories[i].name,null);
+                createCustomList('h4',data.categories[i].color, "Score out of 10" + data.categories[i].score_out_of_10.toFixed(3),null);
             }
-            createCustomSummary('p', `<b>Summary: </b>` + data.summary);
-            createCustomSummary('p', `<b>Teleport city score: </b>` + data.teleport_city_score.toFixed(3));
+            createCustomList('p',null,`<b>Summary: </b>` + data.summary,null);
+            createCustomList('p',null,`<b>Teleport city score: </b>` + data.teleport_city_score.toFixed(3),null);
+            createCustomList('button', null, 'Search another city', 'reload');
 
-            let reset = document.createElement('button');
-            reset.textContent = 'Search another city';
-            reset.setAttribute('id', 'reload')
-            information.appendChild(reset);
-
-            reset.addEventListener('click',  function(){
+            document.querySelector('#reload').addEventListener('click',  function(){
                 location.reload(true);
             })
-         }).catch(() => {
-            if(cityName.length == 0){
-                inputBox.style.display='block';
-                information.style.display = 'block';
-                alert('Write the nome of city.');
-                location.reload(true);
-            }else{
-                alert('The name of the city is not valid.');
-                location.reload(true);
-            }
-        });
+          }).catch(() => {
+             if(cityName.length == 0){
+                 inputBox.style.display='block';
+                 information.style.display = 'block';
+                 alert('Write the nome of city.');
+                 location.reload(true);
+             }else{
+                 alert('The name of the city is not valid.');
+                 location.reload(true);
+             }
+         });
     });
 });
 
