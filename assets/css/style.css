@@ -1,21 +1,26 @@
 *{
-    font-family: 'Helvetica';
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 body{
     background-image: url("../img/terra.jpg");
     background-size: cover;
 }
+h1{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    padding-top: 60px;
+}
 #unsernameGet{
     width: 500px;
     height: 40px;
 }
-fieldset{
+form{
     text-align: center;
     align-items: center;
     width: 600px;
     height: 100px;
     margin: 100px auto;
-    box-shadow: 5px 5px 5px #dedede;
     display: block;
 }
 .boxText{
@@ -122,8 +127,8 @@ p{
         margin: -5px auto;
     }
     #btnGet{
-        font-size: 19px;
-        top: 2px;
+        font-size: 12px;
+        top: 4px;
         border: 1px solid black;
     }
     fieldset{
@@ -140,7 +145,7 @@ p{
         height: 20px;
     }
     #search{
-        height: 15px;
+        height: 18px;
         padding: 0px;
     }
     #information{
