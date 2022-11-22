@@ -5,11 +5,14 @@ body{
     background-image: url("../img/terra.jpg");
     background-size: cover;
 }
+.loader{
+    margin: 200px auto;
+}
 h1{
     color: white;
     text-align: center;
     font-size: 60px;
-    padding-top: 60px;
+    margin-top: 50px;
 }
 #unsernameGet{
     width: 500px;
@@ -20,7 +23,7 @@ form{
     align-items: center;
     width: 600px;
     height: 100px;
-    margin: 100px auto;
+    margin: 60px auto;
     display: block;
 }
 .boxText{
@@ -29,33 +32,15 @@ form{
     align-items: center;
     margin: 10px auto;
     margin: 5px;
-}
-#btnGet{
-    color: black;
-    font-size: 20px;
-    background-color: white;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 6px;
-    border: 2px solid black;
-    outline: none;
-    cursor: pointer;    
-    user-select: none;
-}
-#btnGet:active{
-    transform: translatey(2px);
-}
-legend{
-    font-size: 20px;
-    font-style: oblique;
-    color: white;
-    padding: 5px 10px;
+    border-radius: 25px;
 }
 #search{
     height: 30px;
     padding: 3px;
+    position: relative;
+    top: 8px;
+    left: -65px;
+    opacity: 50%;
 }
 #information{
     background-color: white;
@@ -91,12 +76,11 @@ p{
 /*VISUALIZZAZIONE DA TABLET*/
 @media (max-width: 980px) {
     body{
-        background-size: cover;
         background-repeat: no-repeat;
-        background-size: 2000px;
+        background-size: 2200px;
         background-position: -670px -230px;
     }
-    fieldset{
+    form{
         margin: 50px auto;
     }
     #information{
@@ -117,52 +101,45 @@ p{
 /*VISUALIZZAZIONE DA MOBILE VERTICALE*/
 @media (max-width: 480px) {
     body{
-        background-size: cover;
         background-repeat: no-repeat;
-        background-size: 2000px;
+        background-size: 1600px;
         background-position: -670px -230px;
     }
     .boxText{
-        font-size: 12px;
+        font-size: 20px;
         margin: -5px auto;
     }
-    #btnGet{
-        font-size: 12px;
-        top: 4px;
-        border: 1px solid black;
-    }
-    fieldset{
+    form{
         width: 300px;
         height: 50px;
         margin: 30px auto;
     }
-    legend{
-        font-size: 13px;
-        padding: 10 0;
-    }
     #unsernameGet{
-        width: 200px;
-        height: 20px;
+        width: 300px;
+        height: 30px;
     }
     #search{
         height: 18px;
         padding: 0px;
+        top: -22px;
+        left: 130px;
     }
     #information{
         width: 350px;
         border: 2px solid black;
     }
     h1{
-        font-size: 15px;
+        font-size: 30px;
+        padding-top: -100px;
     }
     h3{
-        font-size: 13px;
+        font-size: 11px;
     }
     h4{
         font-size: 12px;
     }
     p{
-        font-size: 12px;
+        font-size: 10px;
     }
     #reload{
         margin: 20px;
@@ -170,3 +147,17 @@ p{
         padding: 5px;
     }
 }
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
