@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack [my-framework] build --output public",
+    "build": "webpack [vercel] build --output public",
     "dev": "webpack serve"
   },
   "repository": {
