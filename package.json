@@ -2,7 +2,7 @@
   "name": "quality_of_life_in_cities",
   "version": "1.0.0",
   "description": "",
-  "private": true,
+  "public": true,
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve"
