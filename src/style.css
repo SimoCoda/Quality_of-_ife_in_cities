@@ -2,7 +2,7 @@
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 body{
-    background-image: url("../img/terra.jpg");
+    background-image: url("./terra.jpg");
     background-size: cover;
 }
 .loader{

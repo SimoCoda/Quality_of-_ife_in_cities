@@ -1,12 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let searchBtn = document.querySelector('#search');
-    let cityInp = document.querySelector('#unsernameGet');
-    let information = document.querySelector('#information');
-    let inputBox = document.querySelector('form');
-    let spinnerElement = document.querySelector('.loader');
-    let isLoading = false;
+import './style.css';
+import Lente from './search.svg'
 
-    spinnerElement.style.display='none';
+let searchBtn = document.querySelector('#search');
+let cityInp = document.querySelector('#unsernameGet');
+let information = document.querySelector('#information');
+let headline = document.querySelector('#headline');
+let inputBox = document.querySelector('form');
+let spinnerElement = document.querySelector('.loader');
+let isLoading = false;
+
+searchBtn.src = Lente;
+spinnerElement.style.display='none';
+
+
+document.addEventListener('DOMContentLoaded', () => {
 
     const createCustomList = (type,text,color,id) => {
         let e = document.createElement(type);
@@ -21,8 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if(isLoading){
             spinnerElement.style.display='block';
+            information.style.display='none'
+            headline.style.display='none';
         }else{
             spinnerElement.style.display='none';
+            information.style.display='block';
+            headline.style.display='block';
         }
     }
 
@@ -50,23 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleSpinner();
  
             const fetchInfo = await fetch(finalURL);
-            responseCityInfo = await fetchInfo.json();
-            console.log(responseCityInfo);
 
-        }catch(e){
-            toggleSpinner();
-            console.log(e)
-
-            if(cityName.length == 0){
-                inputBox.style.display='block';
-                information.style.display = 'block';
-                alert('Write the nome of city.');
-                location.reload(true);
-            }else{
-                alert('The name of the city is not valid.');
-                location.reload(true);
+            if(fetchInfo.ok){
+                responseCityInfo = await fetchInfo.json();
+            } else {
+                alert('Location is not valid, try again!');
+                location.reload();
             }
 
+        }catch(e){
+        
+            return alert('Something went wrong... Reaload the page!');
+            
         }finally{
             toggleSpinner();
         }
